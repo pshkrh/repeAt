@@ -19,6 +19,20 @@ if __name__ == "__main__":
         print(error_msg)
         logging.error(error_msg)
         sys.exit(1)
+    else:
+        try:
+            token = parser.get('bot_config', 'token')
+            max_repeats = int(parser.get('bot_config', 'max_repeats'))
+        except ValueError:
+            error_msg = 'Max Repeats should be a number.'
+            print(error_msg)
+            logging.error(error_msg)
+            sys.exit(1)
+        except (NoSectionError, NoOptionError):
+            error_msg = 'Configuration file not created properly.'
+            print(error_msg)
+            logging.error(error_msg)
+            sys.exit(1)
 
     @client.event
     async def on_ready():
@@ -49,11 +63,4 @@ if __name__ == "__main__":
                     await message.channel.send(user.mention)
                     time.sleep(0.5)
 
-    try:
-        token = parser.get('bot_config', 'token')
-    except (NoSectionError, NoOptionError):
-        error_msg = 'Configuration file not created properly.'
-        print(error_msg)
-        logging.error(error_msg)
-    else:
-        client.run(token)
+    client.run(token)
