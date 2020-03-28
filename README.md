@@ -5,7 +5,7 @@ Discord Bot for repeating mentions
 
 Requires installation of discord.py from pip.
 
-```
+```shell
 pip install discord.py
 ```
 
