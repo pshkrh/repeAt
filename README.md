@@ -20,3 +20,4 @@ You can also invite the bot to your own Discord server by clicking [here](https:
 ## License
 
 MIT License
+
