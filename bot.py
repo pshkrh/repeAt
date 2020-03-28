@@ -36,7 +36,7 @@ if __name__ == "__main__":
 
     @client.event
     async def on_ready():
-        login_msg = 'Logged in as {0.user}'.format(client)
+        login_msg = f'Logged in as {client.user}'
         print(login_msg)
         logging.info(login_msg)
 
@@ -49,8 +49,8 @@ if __name__ == "__main__":
             nums = [int(s) for s in message.content.split() if s.isdigit()]
             if nums:
                 repeats = nums[0]
-                if repeats > 20:
-                    await message.channel.send('Maximum 20 repeats allowed.')
+                if repeats > max_repeats:
+                    await message.channel.send(f'Maximum {max_repeats} repeats allowed.')
                     return
             else:
                 repeats = 10
