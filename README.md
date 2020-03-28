@@ -1,4 +1,7 @@
 # repeAt
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/81eb37d7f5ef4fd5b8c19fadd23b3a5e)](https://app.codacy.com/manual/pshkrh/repeAt?utm_source=github.com&utm_medium=referral&utm_content=pshkrh/repeAt&utm_campaign=Badge_Grade_Dashboard)
+
 Discord Bot for repeating mentions
 
 ## Requirements
